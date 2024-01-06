@@ -1,0 +1,147 @@
+
+
+.gradientOrange {
+  background: linear-gradient(to right, #ff6b3d, #ff6b6b) no-repeat;
+}
+
+.cartBtn:hover {
+  background: linear-gradient(to right, #ff6b3d, #ff6b6b) no-repeat;
+}
+
+.bgDark {
+  background-color: #111c44 !important;
+}
+
+.bgDarkFull {
+  background-color: #0b1437;
+}
+
+.darkBtn {
+  background-color: #0b1437;
+}
+.darkBtn:hover {
+  background-color: #1a2557;
+}
+
+.gradientText {
+  background: linear-gradient(to right, #ff6b3d, #ff6b6b);
+  color: transparent;
+  background-clip: text;
+
+  /* Vendor-prefixed versions for compatibility */
+  -webkit-background-clip: text; /* Safari 4+, Chrome 6+ */
+  -moz-background-clip: text;    /* Firefox 4+ */
+  -ms-background-clip: text;     /* IE 9+ */
+  -o-background-clip: text;      /* Opera 10.5+ */
+}
+
+button.gradientButton {
+  background: linear-gradient(to right, #ff6b3d, #ff6b6b);
+  background-clip: padding-box;
+
+  /* Vendor-prefixed versions for compatibility */
+  -webkit-background-clip: padding-box; /* Safari 4+, Chrome 6+ */
+  -moz-background-clip: padding-box;    /* Firefox 4+ */
+  -ms-background-clip: padding-box;     /* IE 9+ */
+  -o-background-clip: padding-box;      /* Opera 10.5+ */
+}
+
+button.gradientButton:hover {
+  background: linear-gradient(to right, #e25832, #e2585a);
+
+}
+
+.carouselCard img {
+  transition: filter 0.3s ease;
+}
+
+.carouselCard:hover img {
+  filter: brightness(100%);
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.fork {
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  opacity: 0;
+  transition: all 0.3s;
+  left: 40%;
+  top: -2rem;
+}
+.knife {
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  opacity: 0;
+  transition: all 0.3s;
+  right: 40%;
+  top: -2rem;
+}
+
+.carouselCardBtn:hover .fork {
+  animation-name: bounce;
+  opacity: 1;
+  top: -2rem;
+  left: -0.5rem;
+}
+
+.carouselCardBtn:hover .knife {
+  animation-name: bounce;
+  opacity: 1;
+  top: -2rem;
+  right: -1rem;
+}
+
+
+
+.shadow-glow-red:hover {
+    box-shadow: 
+      0 0 10px rgba(255, 0, 0, 0.9), 
+      0 0 20px rgba(255, 0, 0, 0.9), 
+      0 0 30px rgba(255, 0, 0, 0.9),
+      0 0 40px rgba(255, 0, 0, 0.9),
+      0 0 50px rgba(255, 0, 0, 0.9);
+  }
+  
+  /* Blue Glow */
+  .shadow-glow-blue:hover {
+    box-shadow: 
+      0 0 10px rgba(0, 0, 255, 0.9),
+      0 0 20px rgba(0, 0, 255, 0.9),
+      0 0 30px rgba(0, 0, 255, 0.9),
+      0 0 40px rgba(0, 0, 255, 0.9),
+      0 0 50px rgba(0, 0, 255, 0.9);
+  }
+  
+  /* Green Glow */
+  .shadow-glow-green:hover {
+    box-shadow: 
+      0 0 10px rgba(0, 255, 0, 0.9),
+      0 0 20px rgba(0, 255, 0, 0.9),
+      0 0 30px rgba(0, 255, 0, 0.9),
+      0 0 40px rgba(0, 255, 0, 0.9),
+      0 0 50px rgba(0, 255, 0, 0.9);
+  }
+  
+  /* Yellow Glow */
+  .shadow-glow-yellow:hover {
+    box-shadow: 
+      0 0 10px rgba(255, 255, 0, 0.9),
+      0 0 20px rgba(255, 255, 0, 0.9),
+      0 0 30px rgba(255, 255, 0, 0.9),
+      0 0 40px rgba(255, 255, 0, 0.9),
+      0 0 50px rgba(255, 255, 0, 0.9);
+  }
+  
+
+
+
