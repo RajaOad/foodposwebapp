@@ -26,7 +26,7 @@ export const SaleContextProvider = ({ children })=> {
     const fetchSales = async () => {
       try {
 
-        const response = await fetch(`${serverUrl}api/sales`, {
+        const response = await fetch(`${serverUrl}sales`, {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${authToken}`,
@@ -48,7 +48,7 @@ export const SaleContextProvider = ({ children })=> {
 
     const fetchSingleSale = async (saleId, setSale) => {
       try {
-        const response = await fetch(`${serverUrl}api/sale/${saleId}`, {
+        const response = await fetch(`${serverUrl}sale/${saleId}`, {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${authToken}`,
@@ -81,7 +81,7 @@ export const SaleContextProvider = ({ children })=> {
   
         const { totalQuantity, totalItems, grandTotal } = calculateTotal();
   
-        const response = await fetch(`${serverUrl}api/makesale`, {
+        const response = await fetch(`${serverUrl}makesale`, {
           method: 'POST',
           headers: {
             'Authorization': `Bearer ${authToken}`,
@@ -140,7 +140,7 @@ export const SaleContextProvider = ({ children })=> {
           items: updatedSaleItems
         };
     
-        const response = await fetch(`${serverUrl}api/updatesale/${saleId}`, {
+        const response = await fetch(`${serverUrl}updatesale/${saleId}`, {
           method: 'PUT',
           headers: {
             'Authorization': `Bearer ${authToken}`,
@@ -185,7 +185,7 @@ export const SaleContextProvider = ({ children })=> {
 
         try {
     
-          const response = await fetch(`${serverUrl}api/deletesale/${saleId}`, {
+          const response = await fetch(`${serverUrl}deletesale/${saleId}`, {
             method: 'DELETE',
             headers: {
               'Authorization': `Bearer ${authToken}`,

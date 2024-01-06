@@ -24,7 +24,8 @@ app.use(cors()); // Enable CORS for all routes
 app.use(express.json()); // Parse JSON request bodies
 app.use(express.urlencoded({ extended: true }));
 
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, 'public')));
+app.use('/api/public/uploads', express.static(path.join(__dirname, 'public/uploads')));
 
 // Routes
 app.use("/api", authRouter);

@@ -42,7 +42,7 @@ function AdminRegister() {
         e.preventDefault();
 
         try {
-            const response = await fetch(`${serverUrl}api/admin/register`, {
+            const response = await fetch(`${serverUrl}admin/register`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

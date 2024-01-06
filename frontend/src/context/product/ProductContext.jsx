@@ -22,7 +22,7 @@ export const ProductContextProvider = ({ children })=> {
     const fetchProducts = async () => {
       try {
         
-        const response = await fetch(`${serverUrl}api/products`, {
+        const response = await fetch(`${serverUrl}products`, {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${authToken}`,
@@ -62,7 +62,7 @@ export const ProductContextProvider = ({ children })=> {
         formData.append('categoryId', selectedCategory);
         formData.append('productImage', product.image);
   
-        const response = await fetch(`${serverUrl}api/addproduct`, {
+        const response = await fetch(`${serverUrl}addproduct`, {
           method: 'POST',
           headers: {
             'Authorization': `Bearer ${authToken}`,
@@ -116,7 +116,7 @@ export const ProductContextProvider = ({ children })=> {
         formData.append('updatedImage', updatedProduct.image);
     
         try {
-          const response = await fetch(`${serverUrl}api/updateproduct/${productId}`, {
+          const response = await fetch(`${serverUrl}updateproduct/${productId}`, {
             method: 'PUT',
             headers: {
               'Authorization': `Bearer ${authToken}` // Send the token for authentication
@@ -152,7 +152,7 @@ export const ProductContextProvider = ({ children })=> {
     
       const handleDeleteProduct = async (productId) => {
         try {
-          const response = await fetch(`${serverUrl}api/deleteproduct/${productId}`, {
+          const response = await fetch(`${serverUrl}deleteproduct/${productId}`, {
             method: 'DELETE',
             headers: {
               'Authorization': `Bearer ${authToken}`,
@@ -188,7 +188,7 @@ export const ProductContextProvider = ({ children })=> {
 
       const fetchProductsByCategory = async (categoryName, setProducts, setCategory) => {
         try {
-          const response = await fetch(`${serverUrl}api/categories/${categoryName}/products`, {
+          const response = await fetch(`${serverUrl}categories/${categoryName}/products`, {
             method: 'GET',
             headers: {
               'Authorization': `Bearer ${authToken}`,

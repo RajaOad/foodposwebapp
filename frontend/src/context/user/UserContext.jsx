@@ -28,7 +28,7 @@ export const UserContextProvider = ({ children })=> {
     const fetchUserData = async () => {
 
         try {
-            const response = await fetch(`${serverUrl}api/userdata`, {
+            const response = await fetch(`${serverUrl}userdata`, {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${token}`,
@@ -72,7 +72,7 @@ export const UserContextProvider = ({ children })=> {
 
     const updateUserDetails = async (updatedUser) => {
         try {
-            const response = await fetch(`${serverUrl}api/updateuser`, {
+            const response = await fetch(`${serverUrl}updateuser`, {
                 method: 'PUT',
                 headers: {
                     'Authorization': `Bearer ${token}`,
@@ -116,7 +116,7 @@ export const UserContextProvider = ({ children })=> {
                 formData.append('profileImg', imgFile); // Assuming you have a field name 'imgFile'
             }
 
-            const response = await fetch(`${serverUrl}api/updateuser/images/profile`, {
+            const response = await fetch(`${serverUrl}updateuser/images/profile`, {
                 method: 'PUT',
                 headers: {
                   'Authorization': `Bearer ${token}`,
@@ -157,7 +157,7 @@ export const UserContextProvider = ({ children })=> {
                 formData.append('bannerImg', bannerFile); // Assuming you have a field name 'bannerFile'
             }
     
-            const response = await fetch(`${serverUrl}api/updateuser/images/banner`, {
+            const response = await fetch(`${serverUrl}updateuser/images/banner`, {
                 method: 'PUT',
                 headers: {
                   'Authorization': `Bearer ${token}`,

@@ -12,6 +12,8 @@ import {
 import { UserContext } from "../../../context/user/UserContext";
 import { useDarkMode } from "../../../context/darkmode/DarkModeContext";
 
+const serverUrl = import.meta.env.VITE_SERVER_URL;
+
 const Navbar = (props) => {
 
   const { userData } = useContext(UserContext)
@@ -120,7 +122,7 @@ const Navbar = (props) => {
           button={
             <img
               className="h-10 w-10 rounded-full"
-              src={`http://localhost:3001/${userData.imgUrl}`}
+              src={`${userData.imgUrl ? (serverUrl + userData.imgUrl) : "https://placehold.co/400"}`}
               alt=""
             />
           }

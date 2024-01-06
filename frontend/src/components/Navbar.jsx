@@ -40,6 +40,8 @@ import { UserContext } from "../context/user/UserContext";
 import { CartContext } from "../context/cart/CartContext";
 import { useDarkMode } from "../context/darkmode/DarkModeContext";
 
+const serverUrl = import.meta.env.VITE_SERVER_URL;
+
 // profile menu component
 const profileMenuItems = [
   {
@@ -75,7 +77,7 @@ function ProfileMenu({ onLogout }) {
             size="sm"
             alt=""
             className="border border-white p-0.5"
-            src={userData.imgUrl ? `http://localhost:3001/${userData.imgUrl}` : 'https://placehold.co/400'}
+            src={userData.imgUrl ? `${serverUrl + userData.imgUrl}` : 'https://placehold.co/400'}
           />
           <ChevronDownIcon
             strokeWidth={2.5}

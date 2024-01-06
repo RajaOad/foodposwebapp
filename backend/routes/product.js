@@ -127,7 +127,7 @@ router.put('/updateproduct/:productId', requireAuth, isAdmin, upload.single('upd
               if (req.file) {
                 // Delete the previous product image if it exists
                 if (product.imageUrl) {
-                    const imagePath = path.join(__dirname, '..', 'public', product.imageUrl);
+                    const imagePath = path.join(__dirname, '..', product.imageUrl);
                     if (fs.existsSync(imagePath)) {
                         fs.unlinkSync(imagePath);
                     }
@@ -191,7 +191,7 @@ router.delete('/deleteproduct/:productId', requireAuth, isAdmin, async (req, res
         if(product.imageUrl) {
 
                    // Construct the full path to the image based on the stored format
-         const imagePath = path.join(__dirname, '..', 'public', product.imageUrl);
+         const imagePath = path.join(__dirname, '..', product.imageUrl);
  
          // Check if the file exists and then delete it
          if (fs.existsSync(imagePath)) {

@@ -24,7 +24,7 @@ export const OrderContextProvider = ({ children }) => {
 
   const fetchOrders = async () => {
     try {
-        const response = await fetch(`${serverUrl}api/orders`, {
+        const response = await fetch(`${serverUrl}orders`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ export const OrderContextProvider = ({ children }) => {
     try {
         // Assuming you have a more secure method to get admin token
         const authToken = localStorage.getItem('authToken'); // You might need a different method for admin authentication
-        const response = await fetch(`${serverUrl}api/admin/orders`, {
+        const response = await fetch(`${serverUrl}admin/orders`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -88,7 +88,7 @@ const placeOrder = async (orderData, calculateTotal, deliveryDetails, deliveryOp
 
     const { totalQuantity, totalItems, grandTotal } = calculateTotal();
 
-    const response = await fetch(`${serverUrl}api/placeorder`, {
+    const response = await fetch(`${serverUrl}placeorder`, {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${authToken}`,
@@ -135,7 +135,7 @@ const fetchSingleOrder = async (id) => {
   
   try {
     
-    const response = await fetch(`${serverUrl}api/orders/${id}`, {
+    const response = await fetch(`${serverUrl}orders/${id}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -158,7 +158,7 @@ const fetchSingleOrder = async (id) => {
 
   const fetchAdminSingleOrder = async (id) => {
     try {
-        const response = await fetch(`${serverUrl}api/admin/order/${id}`, {
+        const response = await fetch(`${serverUrl}admin/order/${id}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -184,7 +184,7 @@ const fetchSingleOrder = async (id) => {
 const cancelUserOrder = async (orderId) => {
   try {
     const authToken = localStorage.getItem('authToken');
-    const response = await fetch(`${serverUrl}api/order/cancel/${orderId}`, {
+    const response = await fetch(`${serverUrl}order/cancel/${orderId}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -220,7 +220,7 @@ const cancelUserOrder = async (orderId) => {
 const cancelAdminOrder = async (orderId) => {
   try {
     const authToken = localStorage.getItem('authToken');
-    const response = await fetch(`${serverUrl}api/admin/order/cancel/${orderId}`, {
+    const response = await fetch(`${serverUrl}admin/order/cancel/${orderId}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -256,7 +256,7 @@ const cancelAdminOrder = async (orderId) => {
 const completeAdminOrder = async (orderId) => {
   try {
     const authToken = localStorage.getItem('authToken');
-    const response = await fetch(`${serverUrl}api/admin/order/complete/${orderId}`, {
+    const response = await fetch(`${serverUrl}admin/order/complete/${orderId}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -292,7 +292,7 @@ const completeAdminOrder = async (orderId) => {
 
 async function deleteOrder(orderId) {
   try {
-    const response = await fetch(`${serverUrl}api/admin/order/delete/${orderId}`, {
+    const response = await fetch(`${serverUrl}admin/order/delete/${orderId}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
@@ -328,7 +328,7 @@ async function deleteOrder(orderId) {
 
 const updateOrder = async (updatedOrderData, orderId, closeDialog) => {
   try {
-    const response = await fetch(`${serverUrl}api/admin/order/update/${orderId}`, {
+    const response = await fetch(`${serverUrl}admin/order/update/${orderId}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

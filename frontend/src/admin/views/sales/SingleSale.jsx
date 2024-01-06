@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useNavigate, useParams, Link } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { UserContext } from '../../../context/user/UserContext';
-import CardMenu from '../../components/card/CardMenu';
 import { ConfirmDailog } from '../../components/ConfirmDailog';
 import { PencilSquareIcon, TrashIcon } from "@heroicons/react/24/solid";
 import Card from '../../components/card/index';

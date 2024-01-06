@@ -82,7 +82,7 @@ router.put('/updateuser/images/profile', requireAuth, upload.single('profileImg'
 
         if (req.file) {
             if (dbUser.imgUrl) {
-                const imagePath = path.join(__dirname, '..', 'public', dbUser.imgUrl);
+                const imagePath = path.join(__dirname, '..', dbUser.imgUrl);
                 if (fs.existsSync(imagePath)) {
                     fs.unlinkSync(imagePath);
                 }
@@ -137,7 +137,7 @@ router.put('/updateuser/images/banner', requireAuth, upload.single('bannerImg'),
 
         if (req.file) {
             if (dbUser.bannerBg) {
-                const imagePath = path.join(__dirname, '..', 'public', dbUser.bannerBg);
+                const imagePath = path.join(__dirname, '..', dbUser.bannerBg);
                 if (fs.existsSync(imagePath)) {
                     fs.unlinkSync(imagePath);
                 }

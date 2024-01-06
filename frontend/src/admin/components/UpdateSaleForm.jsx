@@ -115,10 +115,10 @@ const UpdateSaleForm = ({ saleId, saleData, setSaleData, handleUpdateSale, isOpe
       <DialogBody className="max-h-[60vh] overflow-y-auto p-6">
 
         {/* Display Items */}
-        {sale.items.map((item, index) => (
+        {sale ? sale.items.map((item, index) => (
   <div key={index} className="border p-2 flex  dark:bg-navy-900 items-center justify-between relative rounded-md shadow-sm mb-2 hover:shadow-md transition duration-200">
     <div className='flex items-center'>
-      <img src={(serverUrl + item.product.imageUrl) || ""} alt="Item" className="h-16 w-16 mr-2 object-cover rounded-md" />
+      <img src={item.product.imageUrl ? (serverUrl + item.product.imageUrl) : ""} alt="Item" className="h-16 w-16 mr-2 object-cover rounded-md" />
       <div className="flex-grow">
         <p className="font-semibold text-base">{item.product.name}</p>
         <p className="text-gray-600 text-sm">&#x20A8;{item.product.price} | Qty: {item.quantity}</p>
@@ -136,7 +136,7 @@ const UpdateSaleForm = ({ saleId, saleData, setSaleData, handleUpdateSale, isOpe
     </div>
     <button onClick={() => handleRemoveProduct(index)} className="text-red-500 hover:text-red-700 font-bold transition duration-200 mr-4">X</button>
   </div>
-))}
+)) : null}
 
 
         {/* Dropdown for Product Selection */}
@@ -153,11 +153,11 @@ const UpdateSaleForm = ({ saleId, saleData, setSaleData, handleUpdateSale, isOpe
             className="w-full dark:bg-navy-900"
           >
             <Option value="" disabled>Select a Product</Option>
-            {products.map((product) => (
+            {products ? products.map((product) => (
               <Option key={product._id} value={product._id} className='dark:bg-navy-900'>
                 {product.name}
               </Option>
-            ))}
+            )) : null}
           </Select>
         </div>
 

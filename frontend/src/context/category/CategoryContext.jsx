@@ -20,7 +20,7 @@ export const CategoryContextProvider = ({ children })=> {
 
     const fetchCategories = async () => {
       try {
-        const response = await fetch(`${serverUrl}api/categories`, {
+        const response = await fetch(`${serverUrl}categories`, {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${authToken}`,
@@ -56,7 +56,7 @@ export const CategoryContextProvider = ({ children })=> {
             formData.append('categoryImage', category.image);  // 'image' is the key on the server-side for the uploaded image
           }
           
-          const response = await fetch(`${serverUrl}api/addcategory`, {
+          const response = await fetch(`${serverUrl}addcategory`, {
             method: 'POST',
             headers: {
               'Authorization': `Bearer ${authToken}`,
@@ -112,7 +112,7 @@ export const CategoryContextProvider = ({ children })=> {
             formData.append('updatedCatImg', updatedCategory.image);  // 'image' is the key on the server-side for the uploaded image
           }
     
-          const response = await fetch(`${serverUrl}api/updatecategory/${categoryId}`, {
+          const response = await fetch(`${serverUrl}updatecategory/${categoryId}`, {
             method: 'PUT',
             headers: {
               'Authorization': `Bearer ${authToken}`,
@@ -150,7 +150,7 @@ export const CategoryContextProvider = ({ children })=> {
 
         try {
     
-          const response = await fetch(`${serverUrl}api/deletecategory/${categoryId}`, {
+          const response = await fetch(`${serverUrl}deletecategory/${categoryId}`, {
             method: 'DELETE',
             headers: {
               'Authorization': `Bearer ${authToken}`,
